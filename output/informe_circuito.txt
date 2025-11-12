@@ -1,0 +1,8 @@
+La Tension de alimentacion es de 10.00 voltios 
+ La resistencia de carga RL  1.#J ohmios 
+ La resistencia R1 10.00 ohmios 
+ La resistencia R2 10.00 ohmios
+ El valor de las resistencias en serie es de 20.00 ohmios 
+ El valor de las resistencias en paralelo es de 5.00 ohmios 
+ El valor de corriente es de 1.#J amperios 
+ El valor del voltaje de salida es de 5.00 voltios
