@@ -139,22 +139,8 @@ void precios(float *precio1, float *precio2, float *precio3, float *precio4, flo
         printf("No se pudo abrir el archivo.\n");
         exit(1);
     }
-    char linea[100];
-    // Leer precio 1
-    fgets(linea, sizeof(linea), f);
-    sscanf(linea, "%f", precio1);
-    // Leer precio 2
-    fgets(linea, sizeof(linea), f);
-    sscanf(linea, "%f", precio2);
-    // Leer precio 3
-    fgets(linea, sizeof(linea), f);
-    sscanf(linea, "%f", precio3);
-    // Leer precio 4
-    fgets(linea, sizeof(linea), f);
-    sscanf(linea, "%f", precio4);
-    // Leer precio 5
-    fgets(linea, sizeof(linea), f);
-    sscanf(linea, "%f", precio5);
+    
+    fscanf(f, "%f%f%f%f%f", &precio1, &precio2, &precio3, &precio4, &precio5);
     fclose(f);
 }
 
