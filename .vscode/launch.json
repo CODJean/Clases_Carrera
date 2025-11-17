@@ -1,7 +1,53 @@
 {
+    "version": "2.0.0",
     "configurations": [
         {
-            "name": "C/C++: g++.exe build and debug active file",
+            // ▶️ Ejecutar en terminal externa (UTF-8)
+            "name": "Ejecutar en terminal externa",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
+            "preLaunchTask": "C/C++: gcc.exe (UTF-8) compilar archivo activo",
+            "setupCommands": [
+                {
+                    "description": "Habilitar pretty-printing en GDB",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            // ▶️ Ejecutar C++ en terminal externa (UTF-8)
+            "name": "Ejecutar C++ en terminal externa",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
+            "preLaunchTask": "C/C++: g++.exe (UTF-8) compilar archivo activo",
+            "setupCommands": [
+                {
+                    "description": "Habilitar pretty-printing en GDB",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            // 🐛 Depurar en consola integrada (C)
+            "name": "Depurar C (consola interna)",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
@@ -14,18 +60,44 @@
             "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
             "setupCommands": [
                 {
-                    "description": "Enable pretty-printing for gdb",
+                    "description": "Habilitar pretty-printing en GDB",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 },
                 {
-                    "description": "Set Disassembly Flavor to Intel",
+                    "description": "Usar el formato de ensamblado Intel",
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: g++.exe build active file"
+            "preLaunchTask": "C/C++: gcc.exe (UTF-8) compilar archivo activo"
+        },
+        {
+            // 🐛 Depurar en consola integrada (C++)
+            "name": "Depurar C++ (consola interna)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Habilitar pretty-printing en GDB",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Usar el formato de ensamblado Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++.exe (UTF-8) compilar archivo activo"
         }
-    ],
-    "version": "2.0.0"
+    ]
 }

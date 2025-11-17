@@ -1,9 +1,14 @@
 #include <stdio.h>
+#include <locale.h>
 
 int main()
 {
+    setlocale(LC_ALL, "");
+    printf("Cálculo de perímetro y área de un rectángulo\n");
+
     FILE *f;
     f = fopen("datos.txt", "w");
+
     float Base, Altura, Perimetro, Area;
     printf("ingrese el valor de la altura y de la base: ");
     scanf("%f %f", &Altura, &Base);
